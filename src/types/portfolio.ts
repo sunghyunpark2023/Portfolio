@@ -32,6 +32,7 @@ export interface ProjectItem {
   // 기여도
   contributions: ContributionItem[];
   tags: string[];
+  externalLink?: string;
 }
 
 export interface CareerStep {

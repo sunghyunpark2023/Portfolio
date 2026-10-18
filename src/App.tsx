@@ -30,7 +30,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#faf9f5] text-[#1a1a1a] selection:bg-[#1a1a1a] selection:text-white font-sans">
+    <div className="min-h-screen bg-[#fbfbfa] text-[#0f0f12] selection:bg-[#111113] selection:text-white font-sans">
       {/* 1. Clean Top Header */}
       <TopBar onOpenContact={() => setContactModalOpen(true)} />
 

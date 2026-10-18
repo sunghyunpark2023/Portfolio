@@ -26,22 +26,23 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-xs">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs">
       <div className="fixed inset-0" onClick={onClose} />
 
-      <div className="relative w-full max-w-md bg-white rounded-2xl shadow-xl border border-[#dadce0] overflow-hidden z-10 p-6 space-y-6">
-        <div className="flex items-center justify-between pb-3 border-b border-[#f1f3f4]">
+      <div className="relative w-full max-w-md bg-white rounded-3xl shadow-2xl border border-[#e6e6ec] overflow-hidden z-10 p-6 sm:p-7 space-y-6">
+        <div className="flex items-center justify-between pb-3 border-b border-[#e6e6ec]">
           <div>
-            <h3 className="text-lg font-bold text-[#111827]">
+            <span className="text-[10px] font-mono text-[#8e8e99] uppercase tracking-wider block">Get in touch</span>
+            <h3 className="text-lg font-bold text-[#111113]">
               연락하기 (Contact)
             </h3>
-            <p className="text-xs text-[#5f6368]">
+            <p className="text-xs text-[#71717a]">
               {PERSONAL_INFO.name} ({PERSONAL_INFO.englishName})
             </p>
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 text-[#5f6368] hover:text-[#111827] rounded-lg"
+            className="p-1.5 text-[#8e8e99] hover:text-[#111113] hover:bg-[#f4f4f6] rounded-full transition-colors cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>

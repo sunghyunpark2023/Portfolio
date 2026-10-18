@@ -1,21 +1,23 @@
 import { ProjectItem, MindsetPillar, PeopleExperienceItem, CareerStep } from '../types/portfolio';
+import dalbaInternImg from '../assets/images/dalba.avif';
+import fripLogoImg from '../assets/images/frip_logo.jpeg';
 
 export const PERSONAL_INFO = {
   name: '박성현',
   englishName: 'Park Sung Hyun',
-  role: '비즈니스 전략 & 오프라인 영업관리 (AMD / PM)',
-  greeting: '안녕하세요, 박성현입니다.',
-  welcomeSub: '지나치게 포장하기보다, 현장과 데이터 속에서 진짜 문제를 정의하고 유연하게 실행해 성과를 증명해 온 과정을 솔직하게 전합니다.',
-  headline: '데이터와 현장의 목소리(VoC)에서 진짜 문제를 정의하고, 유연한 실행과 집요한 소통으로 성과를 증명합니다.',
-  subIntro: '약국과 백화점 매장부터 기업 B2B 제휴, 크라우드펀딩까지—책상 앞 기획서에 머무르지 않고 늘 현장을 직접 발로 뛰며 고객과 파트너사의 진짜 니즈를 찾아왔습니다.',
+  role: '오프라인 영업관리 & 비즈니스 운영 (AMD / 기획)',
+  greeting: '안녕하세요, 신입 지원자 박성현입니다.',
+  welcomeSub: '포장된 말보다, 현장에서 직접 발로 뛰고 데이터로 문제를 해결하며 배운 솔직한 성장 과정을 전합니다.',
+  headline: '현장에서 직접 발로 뛰며 고객과 직원의 목소리를 듣고, 데이터로 문제를 해결하는 신입 박성현입니다.',
+  subIntro: '',
   email: 'shp011212@gmail.com',
   phone: '010-8746-1649',
   portraitImage: '/src/assets/images/user_profile_portrait_1791982598888.jpg',
-  fieldImage: '/src/assets/images/dalba_vmd_real_1791978311681.jpg',
+  fieldImage: dalbaInternImg,
   education: {
     school: '한양대학교 경영학부 / 중국경제통상학과 복수전공',
     period: '2020.03 ~ 2026.08 졸업',
-    gpa: '4.14 / 4.50',
+    gpa: '4.15 / 4.50',
     highSchool: '상원고등학교 인문계열 졸업',
     bootcamp: '코멘토 뷰티 BM 직무 부트 캠프 수료 (2025.08 ~ 2025.09)'
   },
@@ -26,7 +28,7 @@ export const PERSONAL_INFO = {
     { label: '글로벌 경험', value: '독일 튀빙겐대학교 교환학생 (한국어 학습 AG 프로그램 참여, 2024.03 ~ 2024.08)' }
   ],
   stats: [
-    { label: '학점 (GPA)', value: '4.14', sub: '/ 4.50' },
+    { label: '학점 (GPA)', value: '4.15', sub: '/ 4.50' },
     { label: '오프라인 매출 달성률', value: '150%', sub: '첫 달 목표 초과 달성' },
     { label: '핵심 품목 판매량', value: '3배↑', sub: '전주 대비 증가' },
     { label: 'B2B 미팅 회신율', value: '9%', sub: '업계 평균 대비 3배' },
@@ -35,43 +37,43 @@ export const PERSONAL_INFO = {
   ]
 };
 
-// 4대 일하는 원칙: 문제정의 > 관찰과 소통 > 유연한 피보팅&실행력 > 회복탄력성과 성장의지 (선순환 루프)
+// 4대 일하는 원칙 (신입의 시선에서 명확하고 진솔하게 정의한 일하는 태도)
 export const MINDSET_PILLARS: MindsetPillar[] = [
   {
     number: '01',
     title: '문제 정의',
     subtitle: 'Problem Definition',
-    question: '현상의 이면에 숨겨진 진짜 원인은 무엇인가?',
-    description: '단순히 눈앞에 보이는 숫자나 증상에 얽매이지 않습니다. 정량 데이터(판매량, 전환율)와 정성 데이터(현장 관찰, 고객과 점주의 목소리)를 결합하여 정확한 핵심 문제를 먼저 규명합니다.',
-    example: '달바 약국 입점 시 데이터 부재 상황에서 명동 상권과 외국인 관광객 소비 패턴을 현장 관찰하여 핵심 타깃 제품군을 역으로 정의함.',
-    keywords: ['현장 관찰', '정량·정성 결합', '원인 규명']
+    question: '눈앞의 현상 뒤에 숨겨진 진짜 원인은 무엇인가?',
+    description: '판매 데이터와 현장의 목소리를 함께 살펴보며 문제의 진짜 원인을 먼저 찾습니다.',
+    example: '',
+    keywords: ['현장 관찰', '데이터 분석', '문제 원인 파악']
   },
   {
     number: '02',
-    title: '관찰과 소통',
+    title: '경청과 소통',
     subtitle: 'Relentless Communication',
-    question: '내 생각이 아닌 상대방의 언어와 객관적 근거로 설득하고 있는가?',
-    description: '현장을 직접 발로 뛰며 수집한 데이터와 세심한 맥락 파악을 바탕으로 이해관계자를 설득합니다. 내 직관을 강요하기보다 객관적인 근거로 의견을 조율해 단단한 신뢰 관계를 만듭니다.',
-    example: '축제 부스 운영 중 의견이 갈릴 때, 타 부스 4곳의 참여 데이터를 직접 관찰해 공유함으로써 팀원들을 설득하고 단일 콘텐츠로 성공적 전환.',
-    keywords: ['데이터 기반 설득', '현장 맥락 파악', '신뢰 구축']
+    question: '내 생각만 앞세우지 않고 상대방의 입장에서 소통하는가?',
+    description: '직관이나 고집 대신, 현장에서 모은 객관적인 사실과 숫자로 동료와 파트너를 설득합니다.',
+    example: '',
+    keywords: ['상대방 중심 소통', '객관적 근거 제시', '신뢰 형성']
   },
   {
     number: '03',
-    title: '유연한 피보팅 & 실행력',
+    title: '유연한 대처와 실행',
     subtitle: 'Agile Action & Pivoting',
-    question: '상황이 바뀌었을 때 어떻게 빠르게 대안을 찾을 것인가?',
-    description: '초기 기획안에 집착하지 않습니다. 현장 반응과 파트너사의 상황 변화를 기민하게 포착하여, 목표와 KPI, 실행 방식을 유연하게 수정하고 지금 실행할 수 있는 대안을 즉시 실행합니다.',
-    example: '체스터톤스 제휴 시 파트너사 리소스 부족을 확인하고 단기 수수료 대신 참여 장벽 완화 및 장기 파트너십으로 목표를 유연하게 피보팅함.',
-    keywords: ['목표 피보팅', '빠른 실행', '대안 제시']
+    question: '상황이 예상과 다를 때 얼마나 빠르게 대안을 찾고 실행하는가?',
+    description: '처음 계획에만 갇히지 않고 현장의 변화에 맞춰 빠르게 대안을 찾아 바로 실행합니다.',
+    example: '',
+    keywords: ['빠른 대안 실행', '현장 적응력', '실행력']
   },
   {
     number: '04',
-    title: '회복탄력성과 성장 의지',
+    title: '실패를 배움으로',
     subtitle: 'Resilience & Growth',
-    question: '예상치 못한 변수 속에서 무엇을 배우고 자산화할 것인가?',
-    description: '계획대로 흘러가지 않는 돌발 변수(VMD 제작 지연, 예산 축소 등) 앞에서도 흔들리지 않고 대안을 탐색합니다. 실패와 위기를 다음 성과의 값진 자산으로 남깁니다.',
-    example: 'VMD 제작 지연 시 현장 POP 비치와 영상 송출이라는 대안을 찾아내 오히려 첫 달 150% 매출 달성을 견인함.',
-    keywords: ['위기 대처', '회고와 자산화', '지속적 성장']
+    question: '예상치 못한 변수 속에서 무엇을 배우고 성장할 것인가?',
+    description: '돌발 상황 앞에서도 포기하지 않고 대안을 찾으며, 배운 점을 다음 성장의 밑거름으로 만듭니다.',
+    example: '',
+    keywords: ['위기 해결', '경험의 자산화', '지속적인 성장']
   }
 ];
 
@@ -88,7 +90,7 @@ export const CAREER_JOURNEY_STEPS: CareerStep[] = [
     thoughtSnippet: '신규 약국 채널에서 발로 뛰어 외국인 관광객의 기능성 뷰티 수요를 파악하고, VMD 지연에 맞서 즉시 도입 가능한 현장 POP 대안을 기획함',
     learningSnippet: '불확실한 상황에서도 현장을 직접 관찰하면 고객의 진짜 니즈를 발견할 수 있고,\n지금 당장 할 수 있는 대안을 빠르게 실행하는 것이 성과를 만든다는 점을 배웠습니다.',
     metrics: '첫 달 목표 매출 150% 달성 · 핵심 품목 판매량 3배 증가',
-    image: '/src/assets/images/dalba_vmd_real_1791978311681.jpg',
+    image: dalbaInternImg,
     primaryProjectId: 'dalba-myeongdong'
   },
   {
@@ -102,7 +104,7 @@ export const CAREER_JOURNEY_STEPS: CareerStep[] = [
     thoughtSnippet: '기업 고객이 플랫폼을 써야 하는 이유를 선제 발굴하고, 파트너사 리소스 부족 시 단기 수수료보다 유저 참여 극대화로 목표를 유연하게 피보팅함',
     learningSnippet: '영업은 상품을 일방적으로 설득하는 것이 아니라,\n상대방의 진짜 고민을 먼저 듣고 그 해결책으로 우리 상품을 연결할 때 문이 열린다는 점을 배웠습니다.',
     metrics: '미팅 회신율 9% (업계 3배) · 프로모션 참여 3배 & 파트너십 연장',
-    image: '/src/assets/images/frip_activity_real_1791978312146.jpg',
+    image: fripLogoImg,
     primaryProjectId: 'frip-b2b-coldmail'
   },
   {
@@ -146,7 +148,7 @@ export const PROJECTS: ProjectItem[] = [
     period: '2026.01 ~ 2026.04 (3개월)',
     title: '명동 약국 신규 채널 입점 및 오프라인 매출 달성',
     badge: '신규 채널 개척 · 현장 관찰',
-    image: '/src/assets/images/dalba_vmd_real_1791978311681.jpg',
+    image: dalbaInternImg,
     thoughtProcess: '약국은 기존 올리브영이나 백화점과 전혀 다른 유통 환경입니다. 회사 내 판매 데이터가 전혀 없었고 준비하던 VMD(진열대) 제작마저 늦어졌습니다. 저는 가만히 앉아 데이터를 기다리기보다 명동 현장 약국들을 직접 돌았습니다. 외국인 관광객들이 약국에서 "기능성·더마 화장품"에 대한 신뢰를 바탕으로 지갑을 연다는 점을 발견했고, VMD가 없어도 지금 당장 고객 눈을 사로잡을 POP와 스마트폰 영상 대안을 마련하면 승산이 있다고 판단했습니다.',
     problem: '약국이라는 신규 채널 특성상 자사 제품에 대한 독자적 판매 데이터와 고객 니즈 정보가 없었고, VMD 제작 지연으로 매장 내 홍보 수단이 미흡함.',
     insight: '명동 상권 특성상 외국인 관광객의 기능성 뷰티 제품 수요가 압도적임을 발견. 현장 약국과 경쟁 매장의 진열 구조 및 관광객 동선을 분석해 가설 수립.',
@@ -299,7 +301,7 @@ export const PROJECTS: ProjectItem[] = [
     organization: '공익법인 사회적협동조합 하랑',
     role: '카카오 같이가치 크라우드펀딩 PM & 이벤트 운영',
     period: '2025.06 ~ 2026.06 (1년)',
-    title: '카카오 같이가치 크라우드펀딩 기획 및 KPI 재정의',
+    title: '카카오 같이가치 크라우드펀딩 기획',
     badge: '크라우드펀딩 PM · 참여자 중심 KPI',
     image: '/src/assets/images/harang_kakao_funding_1791978367635.jpg',
     thoughtProcess: '기존의 반복적인 봉사 프로그램은 청년들의 관심을 끌지 못했고 기부자 이탈이 이어졌습니다. 저는 청년 100명 대상 설문조사를 통해 "요즘 20대는 거창한 금액 기부보다, 내가 일상에서 쉽게 공감하고 직접 참여할 수 있는 따뜻한 스토리에 움직인다"는 점을 확인했습니다. 그래서 펀딩의 핵심 목표를 "큰 모금액"이 아니라 "최대한 많은 청년의 참여(참여자 수)"로 과감히 재정의했습니다.',
@@ -328,7 +330,8 @@ export const PROJECTS: ProjectItem[] = [
       { area: '펀딩 기획 및 KPI 성과 관리', percentage: 100 },
       { area: '홍보/마케팅 전략 수립 및 상세페이지 기획', percentage: 60 }
     ],
-    tags: ['카카오 같이가치', 'PM', '스토리텔링', 'KPI 재정의', '공익 캠페인']
+    tags: ['카카오 같이가치', 'PM', '스토리텔링', '펀딩 기획', '공익 캠페인'],
+    externalLink: 'https://together.kakao.com/fundraisings/131153/story'
   },
 
   // 3-2. 하랑 사회혁신축제 (세븐틴하츠 페스티벌)
@@ -415,7 +418,7 @@ export const PROJECTS: ProjectItem[] = [
     organization: 'BGF리테일 산학협력 프로젝트',
     role: '전략 리서처 & 인터뷰어',
     period: '2024.10 ~ 2024.12',
-    title: '포켓CU 픽업 서비스 활성화 전략 (산학협력 우수상 수상)',
+    title: '포켓CU 픽업 서비스 활성화 전략',
     badge: '🏆 산학협력 우수상 수상 · 현장 VoC',
     image: '/src/assets/images/strategy_analysis_deck_1791976208090.jpg',
     thoughtProcess: '편의점 앱(포켓CU) 픽업 서비스는 편의점 본사의 적극적인 마케팅에도 불구하고 실제 매장 이용률이 저조했습니다. 회의실에서 앱 화면만 본다고 문제를 찾을 수 없습니다. "매일 물건을 보관하고 손님에게 건네주는 점주님들과, 픽업을 써본 손님들의 진짜 목소리(VoC)"를 들어봐야 어디서 막히는지 알 수 있다고 확신했습니다.',
@@ -469,7 +472,7 @@ export const PEOPLE_EXPERIENCES: PeopleExperienceItem[] = [
 ];
 
 export const FUTURE_ASPIRATION = {
-  quote: '"이러한 태도로 일하며 고객과 시장 니즈에 맞는 실행 방안을 수립해 브랜드/제품의 가치를 전달하겠습니다."',
-  commitment: '이러한 태도로 일하며 고객과 시장 니즈에 맞는 실행 방안을 수립해 브랜드/제품의 가치를 전달하겠습니다.',
+  quote: '"경계 없이 일하며 고객과 시즈에 맞는 실행 방안으로 브랜드 가치를 전달하겠습니다"',
+  commitment: '경계 없이 일하며 고객과 시즈에 맞는 실행 방안으로 브랜드 가치를 전달하겠습니다',
   visionText: '유통과 플랫폼 생태계 전반에서 데이터 분석력과 현장 관찰력을 결합하여 진짜 비즈니스 기회를 발굴하고자 합니다. 파트너사 및 브랜드의 핵심 니즈를 파악하고, 시장 니즈에 맞는 실행안을 수립하여 고객과 회사 모두의 성장을 견인하는 차별화된 가치를 지속적으로 제안해 나가겠습니다.'
 };

@@ -25,31 +25,29 @@ export const NavigationTabs: React.FC<NavigationTabsProps> = ({ activeTab, onSel
   ];
 
   return (
-    <div className="sticky top-0 z-40 bg-[#faf9f5]/90 backdrop-blur-md border-y border-[#eae8e1] py-3 px-4 sm:px-6 md:px-8">
+    <div className="sticky top-[57px] z-40 bg-[#fbfbfa]/90 backdrop-blur-md border-b border-[#e6e6ec] py-2.5 px-4 sm:px-6 md:px-8">
       <div className="max-w-6xl mx-auto flex items-center justify-between gap-3">
         {/* Navigation Tabs */}
-        <div className="flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5">
+        <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5">
           {tabs.map((tab) => {
-            const Icon = tab.icon;
             const isActive = activeTab === tab.id;
             return (
               <button
                 key={tab.id}
                 onClick={() => onSelectTab(tab.id)}
-                className={`shrink-0 flex items-center gap-2 px-4 py-2 rounded-2xl text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
+                className={`shrink-0 flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
                   isActive
-                    ? 'bg-[#1a1a1a] text-white shadow-xs'
-                    : 'bg-[#ffffff] text-[#555] hover:text-[#1a1a1a] hover:bg-[#f0eee6] border border-[#eae8e1]'
+                    ? 'bg-[#111113] text-white shadow-xs'
+                    : 'text-[#63636e] hover:text-[#111113] hover:bg-[#f0f0f3]'
                 }`}
               >
-                <Icon className={`w-4 h-4 ${isActive ? 'text-white' : 'text-[#8a8880]'}`} />
                 <span>{tab.label}</span>
                 <span
-                  className={`text-[11px] font-mono px-1.5 py-0.5 rounded-full ${
-                    isActive ? 'bg-white/20 text-white' : 'bg-[#f0eee6] text-[#71706c]'
+                  className={`text-[10px] font-mono px-1.5 py-0.2 rounded-full ${
+                    isActive ? 'bg-white/20 text-white' : 'text-[#8e8e99]'
                   }`}
                 >
-                  {tab.badge}
+                  ({tab.badge})
                 </span>
               </button>
             );
@@ -57,9 +55,9 @@ export const NavigationTabs: React.FC<NavigationTabsProps> = ({ activeTab, onSel
         </div>
 
         {/* Quick Hint */}
-        <div className="hidden lg:flex items-center gap-1.5 text-xs text-[#71706c] shrink-0 font-medium">
-          <CheckCircle2 className="w-3.5 h-3.5 text-[#1e4620]" />
-          <span>카드를 클릭하시면 '자세히 보기' 팝업이 열립니다</span>
+        <div className="hidden lg:flex items-center gap-1.5 text-xs text-[#8e8e99] shrink-0 font-medium">
+          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+          <span>카드 클릭 시 상세 모달 열람 가능</span>
         </div>
       </div>
     </div>

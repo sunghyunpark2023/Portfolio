@@ -5,7 +5,8 @@ import {
   Trophy, 
   Flame,
   BarChart3,
-  Sparkles
+  Sparkles,
+  ExternalLink
 } from 'lucide-react';
 import { PROJECTS } from '../data/portfolioData';
 import { ProjectItem } from '../types/portfolio';
@@ -38,106 +39,138 @@ export const SelectedWorksSection: React.FC<SelectedWorksSectionProps> = ({ onOp
   return (
     <section id="selected-works" className="space-y-8">
       {/* Section Header */}
-      <div className="space-y-3">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#edebe4] text-xs sm:text-sm font-semibold text-[#1a1a1a]">
-          <FolderGit2 className="w-4 h-4 text-[#1a1a1a]" />
-          <span>Selected Works · 주요 프로젝트 & 전략 리서치</span>
+      <div className="space-y-2">
+        <div className="flex items-center gap-2">
+          <span className="text-xs font-mono text-[#8e8e99] tracking-tight">
+            ( 03 ) Selected Works
+          </span>
+          <span className="text-[#d4d4dc]">·</span>
+          <span className="text-xs font-mono text-[#71717a]">주요 프로젝트 & 전략 리서치</span>
         </div>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#1a1a1a] tracking-tight break-keep">
-          온오프라인 캠페인 기획 / 데이터 기반 전략 제안
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#111113] tracking-tight break-keep">
+          4번의 프로젝트
         </h2>
-        <p className="text-xs sm:text-sm md:text-base text-[#555] max-w-3xl leading-relaxed break-keep">
+        <p className="text-xs sm:text-sm text-[#71717a] max-w-3xl leading-relaxed break-keep">
           인턴십 외에도 카카오 같이가치 펀딩 PM, 사회혁신축제 부스 기획 운영, 설화수 및 BGF리테일 산학협력 등 문제 정의와 실행을 통해 성과를 거둔 프로젝트들을 모았습니다. 카드를 클릭하시면 상세 팝업이 열립니다.
         </p>
       </div>
 
-      {/* Filter Tabs */}
-      <div className="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
+      {/* Filter Tabs (Sleek Segmented Control) */}
+      <div className="flex items-center gap-1.5 p-1 bg-[#f4f4f6] border border-[#e6e6ec] rounded-full w-fit max-w-full overflow-x-auto no-scrollbar">
         {filterTabs.map((tab) => {
-          const Icon = tab.icon;
           const isActive = activeFilter === tab.id;
           return (
             <button
               key={tab.id}
               onClick={() => setActiveFilter(tab.id)}
-              className={`shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-2xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
+              className={`shrink-0 flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
                 isActive
-                  ? 'bg-[#1a1a1a] text-white shadow-xs'
-                  : 'bg-[#ffffff] text-[#555] hover:text-[#1a1a1a] hover:bg-[#f0eee6] border border-[#eae8e1]'
+                  ? 'bg-[#111113] text-white shadow-xs'
+                  : 'text-[#71717a] hover:text-[#111113]'
               }`}
             >
-              <Icon className="w-3.5 h-3.5" />
               <span>{tab.label}</span>
             </button>
           );
         })}
       </div>
 
-      {/* Projects Grid: 2 Columns with High Readability and Line-break Control */}
+      {/* Projects Grid: 2 Columns Gallery (Inspired by Projects in reference) */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-7">
         {filteredProjects.map((project) => (
           <div
             key={project.id}
             onClick={() => onOpenDetail(project)}
-            className="bg-[#ffffff] rounded-3xl border border-[#eae8e1] hover:border-[#b8b6b0] p-6 sm:p-7 shadow-xs hover:shadow-md transition-all group cursor-pointer flex flex-col justify-between space-y-4"
+            className="bg-[#ffffff] rounded-3xl border border-[#e6e6ec] hover:border-[#111113]/40 p-6 sm:p-7 transition-all hover:shadow-[0_16px_36px_-12px_rgba(0,0,0,0.06)] group cursor-pointer flex flex-col justify-between space-y-4"
           >
             <div className="space-y-4">
-              {/* Compact Thumbnail Image */}
-              <div className="relative h-48 sm:h-52 rounded-2xl overflow-hidden bg-[#f0eee6] border border-[#eae8e1]">
+              {/* Cinematic Thumbnail Image */}
+              <div className="relative h-48 sm:h-56 rounded-2xl overflow-hidden bg-[#f4f4f6] border border-[#e6e6ec]">
                 <img
                   src={project.image}
                   alt={project.title}
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 filter brightness-[1.02]"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (!target.dataset.triedFallback) {
+                      target.dataset.triedFallback = 'true';
+                      target.src = 'https://raw.githubusercontent.com/sunghyunpark2023/Portfolio/d829a104140c8ac9c6bcec4aa1973816e59f6e67/%EB%8B%AC%EB%B0%94.avif';
+                    }
+                  }}
+                  className="w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-700 filter brightness-[1.01]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent" />
                 
                 <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
-                  <span className="text-xs font-semibold text-[#1a1a1a] bg-white/95 backdrop-blur-xs px-2.5 py-1 rounded-full shadow-xs">
+                  <span className="text-[11px] font-semibold text-[#111113] bg-white/95 backdrop-blur-xs px-2.5 py-1 rounded-full shadow-xs">
                     {project.badge}
                   </span>
-                  <span className="text-[11px] font-mono text-white/90 bg-black/45 backdrop-blur-xs px-2.5 py-0.5 rounded-full">
+                  <span className="text-[11px] font-mono text-white/95 bg-black/50 backdrop-blur-xs px-2.5 py-0.5 rounded-full">
                     {project.period}
                   </span>
                 </div>
 
                 <div className="absolute bottom-3 left-3.5 right-3.5 text-white">
-                  <div className="text-xs font-medium text-white/80">{project.organization}</div>
+                  <div className="text-[11px] font-mono text-white/80">{project.organization}</div>
                   <div className="text-sm font-semibold">{project.role}</div>
                 </div>
               </div>
 
-              {/* Title (Enhanced Font Size & Korean Line Break) */}
-              <h3 className="text-lg sm:text-xl md:text-2xl font-black text-[#1a1a1a] tracking-tight group-hover:underline leading-snug break-keep [text-wrap:pretty]">
+              {/* Title */}
+              <h3 className="text-lg sm:text-xl font-extrabold text-[#111113] tracking-tight group-hover:text-black leading-snug break-keep [text-wrap:pretty]">
                 {project.title}
               </h3>
 
-              {/* Concise Summary with Line Break */}
-              <p className="text-xs sm:text-sm text-[#444] leading-relaxed break-keep line-clamp-3 [text-wrap:pretty]">
-                {project.thoughtProcess}
-              </p>
+              {/* 핵심 역량 키워드 (#태그) */}
+              {project.tags && project.tags.length > 0 && (
+                <div className="flex flex-wrap gap-1.5 py-0.5">
+                  {project.tags.map((tag, idx) => (
+                    <span
+                      key={idx}
+                      className="text-xs font-semibold px-2.5 py-1 rounded-md bg-[#f4f4f6] border border-[#e6e6ec] text-[#52525b]"
+                    >
+                      #{tag}
+                    </span>
+                  ))}
+                </div>
+              )}
 
               {/* Key Result Highlight Box */}
-              <div className="bg-[#f4fbf6] border border-[#d2ead6] rounded-2xl p-3.5 flex items-start gap-2.5">
-                <Trophy className="w-4 h-4 text-[#1e4620] shrink-0 mt-0.5" />
-                <div className="text-xs sm:text-sm font-bold text-[#1e4620] leading-snug break-keep [text-wrap:pretty]">
+              <div className="bg-[#f0fdf4] border border-[#dcfce7] rounded-xl p-3.5 flex items-start gap-2.5">
+                <Trophy className="w-4 h-4 text-[#166534] shrink-0 mt-0.5" />
+                <div className="text-sm sm:text-base font-bold text-[#15803d] leading-snug break-keep [text-wrap:pretty]">
                   {project.result[0]}
                 </div>
               </div>
             </div>
 
-            {/* Card Footer: Detail Trigger Button ('자세히 보기') */}
-            <div className="pt-3 border-t border-[#f0eee6] flex items-center justify-between text-xs sm:text-sm">
-              <span className="text-[#71706c] font-medium break-keep">
-                기여도 <strong className="text-[#1a1a1a] font-mono">{project.contributions[0]?.percentage || 80}%</strong>
+            {/* Card Footer: Detail Trigger Button ('자세히 보기' & '링크') */}
+            <div className="pt-3 border-t border-[#e6e6ec] flex items-center justify-between text-xs sm:text-sm">
+              <span className="text-[#71717a] font-medium break-keep">
+                기여도 <strong className="text-[#111113] font-mono">{project.contributions[0]?.percentage || 80}%</strong>
               </span>
-              <button
-                type="button"
-                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-[#1a1a1a] group-hover:bg-black text-white rounded-xl font-bold text-xs transition-colors cursor-pointer shadow-xs"
-              >
-                <span>자세히 보기</span>
-                <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </button>
+              <div className="flex items-center gap-2">
+                {project.externalLink && (
+                  <a
+                    href={project.externalLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#fee500] hover:bg-[#fedd00] text-[#191919] rounded-full font-bold text-xs transition-colors cursor-pointer shadow-xs border border-[#ecd200]"
+                    title="카카오 같이가치 모금함 링크 바로가기"
+                  >
+                    <span>링크</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                )}
+                <button
+                  type="button"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-[#111113] group-hover:bg-black text-white rounded-full font-semibold text-xs transition-colors cursor-pointer shadow-xs"
+                >
+                  <span>자세히 보기</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </button>
+              </div>
             </div>
           </div>
         ))}

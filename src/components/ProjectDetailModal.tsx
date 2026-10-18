@@ -6,7 +6,8 @@ import {
   FileText, 
   Trophy, 
   Lightbulb,
-  GraduationCap
+  GraduationCap,
+  ExternalLink
 } from 'lucide-react';
 import { ProjectItem } from '../types/portfolio';
 
@@ -40,20 +41,20 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
       />
 
       {/* Modal Dialog Card */}
-      <div className="relative w-full max-w-5xl bg-[#ffffff] rounded-3xl shadow-2xl border border-[#eae8e1] overflow-hidden z-10 max-h-[92vh] flex flex-col">
+      <div className="relative w-full max-w-5xl bg-[#ffffff] rounded-3xl shadow-2xl border border-[#e6e6ec] overflow-hidden z-10 max-h-[92vh] flex flex-col">
         {/* Top Minimal Header */}
-        <div className="px-6 sm:px-8 py-4 border-b border-[#f0eee6] bg-[#faf9f5] flex items-center justify-between shrink-0">
-          <div className="flex items-center gap-2 text-xs sm:text-sm text-[#71706c] truncate pr-4">
-            <span className="font-bold text-[#1a1a1a] bg-[#edebe4] px-3 py-1 rounded-full">{project.badge}</span>
+        <div className="px-6 sm:px-8 py-4 border-b border-[#e6e6ec] bg-[#fbfbfa] flex items-center justify-between shrink-0">
+          <div className="flex items-center gap-2 text-xs sm:text-sm text-[#71717a] truncate pr-4">
+            <span className="font-semibold text-[#111113] bg-[#f4f4f6] px-3 py-1 rounded-full text-xs">{project.badge}</span>
             <span>·</span>
-            <span className="font-semibold text-[#1a1a1a] truncate">{project.organization}</span>
+            <span className="font-semibold text-[#111113] truncate">{project.organization}</span>
             <span>·</span>
-            <span className="font-mono text-xs text-[#8a8880] shrink-0">{project.period}</span>
+            <span className="font-mono text-xs text-[#8e8e99] shrink-0">{project.period}</span>
           </div>
 
           <button
             onClick={onClose}
-            className="p-2 text-[#71706c] hover:text-[#1a1a1a] hover:bg-[#edebe4] rounded-full transition-colors cursor-pointer shrink-0"
+            className="p-2 text-[#71717a] hover:text-[#111113] hover:bg-[#f4f4f6] rounded-full transition-colors cursor-pointer shrink-0"
             aria-label="팝업 닫기"
           >
             <X className="w-5 h-5" />
@@ -71,6 +72,13 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
                   src={project.image}
                   alt={project.title}
                   referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (!target.dataset.triedFallback) {
+                      target.dataset.triedFallback = 'true';
+                      target.src = 'https://raw.githubusercontent.com/sunghyunpark2023/Portfolio/d829a104140c8ac9c6bcec4aa1973816e59f6e67/%EB%8B%AC%EB%B0%94.avif';
+                    }
+                  }}
                   className="w-full h-48 sm:h-52 md:h-56 object-cover object-center filter brightness-[1.02]"
                 />
               </div>
@@ -112,6 +120,21 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
                       #{t}
                     </button>
                   ))}
+                </div>
+              )}
+
+              {/* 카카오 같이가치 등 외부 프로젝트 링크 바로가기 */}
+              {project.externalLink && (
+                <div className="pt-2">
+                  <a
+                    href={project.externalLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-[#fee500] hover:bg-[#fedd00] text-[#191919] font-bold text-xs sm:text-sm rounded-xl transition-colors shadow-xs border border-[#ecd200]"
+                  >
+                    <span>카카오 같이가치 모금함 바로가기</span>
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
                 </div>
               )}
             </div>
