@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React from 'react';
 import { 
   GraduationCap, 
   Globe, 
@@ -8,9 +8,6 @@ import {
   ArrowRight, 
   Printer, 
   Sparkles,
-  Camera,
-  RotateCcw,
-  Upload,
   Phone
 } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
@@ -20,61 +17,10 @@ interface ProfileAboutSectionProps {
   onExploreCareer: () => void;
 }
 
-const STORAGE_KEY = 'user_custom_profile_image';
-
 export const ProfileAboutSection: React.FC<ProfileAboutSectionProps> = ({ 
   onOpenContact, 
   onExploreCareer 
 }) => {
-  const fileInputRef = useRef<HTMLInputElement>(null);
-  const [profileImg, setProfileImg] = useState<string>(PERSONAL_INFO.portraitImage);
-  const [hasCustomImg, setHasCustomImg] = useState(false);
-
-  useEffect(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) {
-        setProfileImg(saved);
-        setHasCustomImg(true);
-      }
-    } catch {
-      // ignore
-    }
-  }, []);
-
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      const result = event.target?.result as string;
-      if (result) {
-        setProfileImg(result);
-        setHasCustomImg(true);
-        try {
-          localStorage.setItem(STORAGE_KEY, result);
-        } catch {
-          // ignore storage quota error
-        }
-      }
-    };
-    reader.readAsDataURL(file);
-  };
-
-  const handleResetImage = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    setProfileImg(PERSONAL_INFO.portraitImage);
-    setHasCustomImg(false);
-    try {
-      localStorage.removeItem(STORAGE_KEY);
-    } catch {
-      // ignore
-    }
-    if (fileInputRef.current) {
-      fileInputRef.current.value = '';
-    }
-  };
 
   return (
     <section id="profile-about" className="space-y-4">
@@ -105,61 +51,22 @@ export const ProfileAboutSection: React.FC<ProfileAboutSectionProps> = ({
           {/* 프로필 사진 + 사진 변경 기능 + 신입 직무 소개 문구 */}
           <div className="lg:col-span-4 space-y-4">
             
-            {/* 프로필 사진 박스 */}
-            <div className="space-y-2">
-              <div 
-                onClick={() => fileInputRef.current?.click()}
-                className="group relative w-full max-w-[270px] mx-auto lg:mx-0 rounded-2xl overflow-hidden bg-[#f4f4f6] border border-[#e6e6ec] hover:border-[#111113] shadow-xs cursor-pointer transition-all"
-                title="클릭하여 내 사진 직접 업로드"
-              >
-                <div className="aspect-[3/4] w-full relative">
-                  <img
-                    src={profileImg}
-                    alt="박성현 프로필"
-                    referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
-                  />
-
-                  {/* 사진 위 호버 시 표시되는 업로드 오버레이 */}
-                  <div className="absolute inset-0 bg-black/45 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-1.5 text-white p-3 text-center">
-                    <Camera className="w-5 h-5 text-white" />
-                    <span className="text-xs font-semibold leading-tight">
-                      내 사진 직접 업로드<br />(클릭해서 변경)
-                    </span>
-                  </div>
-                </div>
-
-                {/* 숨겨진 파일 인풋 */}
-                <input
-                  ref={fileInputRef}
-                  type="file"
-                  accept="image/*"
-                  onChange={handleFileChange}
-                  className="hidden"
+            {/* 프로필 사진 박스 (영구 고정) */}
+            <div className="w-full max-w-[270px] mx-auto lg:mx-0 rounded-2xl overflow-hidden bg-[#f4f4f6] border border-[#e6e6ec] shadow-xs">
+              <div className="aspect-[3/4] w-full relative">
+                <img
+                  src={PERSONAL_INFO.portraitImage}
+                  alt="박성현 프로필"
+                  referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (!target.dataset.triedFallback) {
+                      target.dataset.triedFallback = 'true';
+                      target.src = '/profile.png';
+                    }
+                  }}
+                  className="w-full h-full object-cover object-top filter brightness-[1.01]"
                 />
-              </div>
-
-              {/* 사진 업로드 버튼 / 초기화 버튼 */}
-              <div className="flex items-center justify-between max-w-[270px] mx-auto lg:mx-0 px-1 text-xs">
-                <button
-                  type="button"
-                  onClick={() => fileInputRef.current?.click()}
-                  className="inline-flex items-center gap-1.5 text-[#52525b] hover:text-[#111113] font-medium cursor-pointer py-1 transition-colors"
-                >
-                  <Upload className="w-3.5 h-3.5" />
-                  <span>{hasCustomImg ? '사진 다시 변경' : '내 사진 직접 올리기'}</span>
-                </button>
-
-                {hasCustomImg && (
-                  <button
-                    type="button"
-                    onClick={handleResetImage}
-                    className="inline-flex items-center gap-1 text-[#8e8e99] hover:text-rose-600 font-medium cursor-pointer py-1 transition-colors"
-                  >
-                    <RotateCcw className="w-3 h-3" />
-                    <span>기본으로 복원</span>
-                  </button>
-                )}
               </div>
             </div>
 

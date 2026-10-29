@@ -12,7 +12,7 @@ export const PERSONAL_INFO = {
   subIntro: '',
   email: 'shp011212@gmail.com',
   phone: '010-8746-1649',
-  portraitImage: '/src/assets/images/user_profile_portrait_1791982598888.jpg',
+  portraitImage: '/profile.png',
   fieldImage: dalbaInternImg,
   education: {
     school: '한양대학교 경영학부 / 중국경제통상학과 복수전공',
