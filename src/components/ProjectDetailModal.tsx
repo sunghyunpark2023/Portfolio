@@ -76,7 +76,17 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
                     const target = e.currentTarget;
                     if (!target.dataset.triedFallback) {
                       target.dataset.triedFallback = 'true';
-                      target.src = 'https://raw.githubusercontent.com/sunghyunpark2023/Portfolio/d829a104140c8ac9c6bcec4aa1973816e59f6e67/%EB%8B%AC%EB%B0%94.avif';
+                      if (project.id === 'sulwhasoo-rebranding') {
+                        target.src = 'https://raw.githubusercontent.com/sunghyunpark2023/Portfolio/ba7fe3e31d447f7605223abb3eafd82d116bdbb6/%EC%84%A4%ED%99%94%EC%88%98.png';
+                      } else if (project.id === 'bgf-retail-pocketcu') {
+                        target.src = 'https://raw.githubusercontent.com/sunghyunpark2023/Portfolio/ce09900308c6a6405ca81934e6addc188d0fdd2a/CU.jpg';
+                      } else if (project.id === 'harang-crowdfunding') {
+                        target.src = 'https://raw.githubusercontent.com/sunghyunpark2023/Portfolio/1c132133bbcb58600b665cb5ea5705f48e5f508f/%EC%B9%B4%EC%B9%B4%EC%98%A4%20%EA%B0%99%EC%9D%B4%EA%B0%80%EC%B9%98.jpeg';
+                      } else if (project.id === 'frip-internship') {
+                        target.src = '/frip_logo.jpeg';
+                      } else if (project.id === 'dalba-internship') {
+                        target.src = '/dalba.avif';
+                      }
                     }
                   }}
                   className="w-full h-48 sm:h-52 md:h-56 object-cover object-center filter brightness-[1.02]"

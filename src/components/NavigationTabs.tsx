@@ -19,8 +19,8 @@ export const NavigationTabs: React.FC<NavigationTabsProps> = ({ activeTab, onSel
   const tabs = [
     { id: 'all' as MainSectionId, label: '전체 모아보기', icon: Layers, badge: 'All' },
     { id: 'profile-about' as MainSectionId, label: 'Profile & About', icon: User, badge: '01' },
-    { id: 'career-journey' as MainSectionId, label: 'Career Journey', icon: Layers, badge: '02' },
-    { id: 'selected-works' as MainSectionId, label: 'Selected Works', icon: FolderGit2, badge: '03' },
+    { id: 'career-journey' as MainSectionId, label: 'Internship', icon: Layers, badge: '02' },
+    { id: 'selected-works' as MainSectionId, label: 'Selected Projects', icon: FolderGit2, badge: '03' },
     { id: 'why-me' as MainSectionId, label: 'Why Me?', icon: ShieldCheck, badge: '04' }
   ];
 

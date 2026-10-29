@@ -77,7 +77,26 @@ export const ProfileAboutSection: React.FC<ProfileAboutSectionProps> = ({
   };
 
   return (
-    <section id="profile-about" className="space-y-6">
+    <section id="profile-about" className="space-y-4">
+      {/* Floating Creative Stickers (Inspired by Image 1) */}
+      <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 sm:gap-3 py-1">
+        <span className="text-xs font-bold px-3 py-1 rounded-lg bg-amber-100 text-amber-900 border border-amber-200 shadow-2xs -rotate-2 select-none">
+          🏷️ #오프라인_유통전략
+        </span>
+        <span className="text-xs font-bold px-3 py-1 rounded-lg bg-sky-100 text-sky-900 border border-sky-200 shadow-2xs rotate-2 select-none">
+          💼 #B2B_세일즈
+        </span>
+        <span className="text-xs font-bold px-3 py-1 rounded-lg bg-emerald-100 text-emerald-900 border border-emerald-200 shadow-2xs -rotate-1 select-none">
+          📊 #100명_정량설문
+        </span>
+        <span className="text-xs font-bold px-3 py-1 rounded-lg bg-rose-100 text-rose-900 border border-rose-200 shadow-2xs rotate-2 select-none">
+          🎯 #150%_매출초과달성
+        </span>
+        <span className="text-xs font-bold px-3 py-1 rounded-lg bg-purple-100 text-purple-900 border border-purple-200 shadow-2xs -rotate-2 select-none">
+          🤝 #크라우드펀딩_PM
+        </span>
+      </div>
+
       {/* Main Card: 좌측 (프로필 사진 + 업로드 기능 + 신입 소개) / 우측 (이력 및 학력 사항 4가지 + 하단 이동 버튼들) */}
       <div className="bg-[#ffffff] rounded-3xl border border-[#e6e6ec] p-6 sm:p-8 md:p-10 shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
@@ -160,25 +179,10 @@ export const ProfileAboutSection: React.FC<ProfileAboutSectionProps> = ({
                 </h1>
               </div>
 
-              <p className="text-sm sm:text-base text-[#27272a] leading-relaxed break-keep font-medium">
-                {PERSONAL_INFO.headline}
-              </p>
-
-              <p className="text-xs sm:text-sm text-[#52525b] leading-relaxed break-keep">
-                {PERSONAL_INFO.welcomeSub}
-              </p>
-
-              {/* 연락처 정보 */}
-              <div className="pt-3 border-t border-[#e6e6ec] text-xs sm:text-sm text-[#52525b] space-y-1.5">
-                <div className="flex items-center justify-center lg:justify-start gap-2">
-                  <Mail className="w-4 h-4 text-[#71717a]" />
-                  <span className="font-mono">{PERSONAL_INFO.email}</span>
-                </div>
-                <div className="flex items-center justify-center lg:justify-start gap-2">
-                  <Phone className="w-4 h-4 text-[#71717a]" />
-                  <span className="font-mono">{PERSONAL_INFO.phone}</span>
-                </div>
-              </div>
+              <h2 className="text-base sm:text-lg text-[#111113] leading-relaxed break-keep font-extrabold tracking-tight">
+                데이터로 진짜 문제를 이해하고<br />
+                빠르게 실행 방식을 조정하는 박성현입니다.
+              </h2>
             </div>
 
           </div>

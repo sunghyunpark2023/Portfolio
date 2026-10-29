@@ -19,8 +19,8 @@ export const TopBar: React.FC<TopBarProps> = ({ onOpenContact }) => {
             <div className="text-sm font-bold text-[#111113] tracking-tight">
               {PERSONAL_INFO.name} <span className="text-xs font-normal text-[#8e8e99] font-mono">/ {PERSONAL_INFO.englishName}</span>
             </div>
-            <div className="text-[11px] text-[#71717a] hidden sm:block">
-              Business Strategist & Offline AMD
+            <div className="text-xs text-[#52525b] hidden sm:block">
+              오프라인 영업관리 & AMD (신입)
             </div>
           </div>
         </div>

@@ -8,12 +8,26 @@
 
   body {
     font-family: var(--font-sans);
-    background-color: #fbfbfa;
+    background-color: #fafaf9;
     color: #111113;
     -webkit-font-smoothing: antialiased;
     letter-spacing: -0.02em;
     word-break: keep-all;
   }
+}
+
+.font-marker {
+  font-family: 'Permanent Marker', cursive, -apple-system, sans-serif;
+  letter-spacing: 0.04em;
+}
+
+/* Subtle Creative Drafting Grid Background (Image 1 style) */
+.studio-grid-bg {
+  background-color: #fafaf9;
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.045) 1px, transparent 1px);
+  background-size: 28px 28px;
 }
 
 /* High-end editorial styling */

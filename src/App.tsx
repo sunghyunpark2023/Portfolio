@@ -30,7 +30,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#fbfbfa] text-[#0f0f12] selection:bg-[#111113] selection:text-white font-sans">
+    <div className="min-h-screen studio-grid-bg text-[#0f0f12] selection:bg-[#111113] selection:text-white font-sans">
       {/* 1. Clean Top Header */}
       <TopBar onOpenContact={() => setContactModalOpen(true)} />
 
