@@ -52,8 +52,8 @@ export const ProfileAboutSection: React.FC<ProfileAboutSectionProps> = ({
           <div className="lg:col-span-4 space-y-4">
             
             {/* 프로필 사진 박스 (영구 고정) */}
-            <div className="w-full max-w-[270px] mx-auto lg:mx-0 rounded-2xl overflow-hidden bg-[#f4f4f6] border border-[#e6e6ec] shadow-xs">
-              <div className="aspect-[3/4] w-full relative overflow-hidden">
+            <div className="w-full max-w-[200px] sm:max-w-[216px] mx-auto lg:mx-0 rounded-2xl overflow-hidden bg-[#f4f4f6] border border-[#e6e6ec] shadow-xs">
+              <div className="aspect-[4/5] w-full relative overflow-hidden">
                 <img
                   src={PERSONAL_INFO.portraitImage}
                   alt="박성현 프로필"
