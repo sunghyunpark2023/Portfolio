@@ -1,6 +1,13 @@
 import { ProjectItem, MindsetPillar, PeopleExperienceItem, CareerStep } from '../types/portfolio';
 import dalbaInternImg from '../assets/images/dalba.avif';
 import fripLogoImg from '../assets/images/frip_logo.jpeg';
+import profilePortraitImg from '../assets/images/profile.png';
+import harangKakaoFundingImg from '../assets/images/harang_kakao_funding_1791978367635.jpg';
+import strategyAnalysisDeckImg from '../assets/images/strategy_analysis_deck_1791976208090.jpg';
+import dalbaRetailShowcaseImg from '../assets/images/dalba_retail_showcase_1791976207637.jpg';
+import fripActivityRealImg from '../assets/images/frip_activity_real_1791978312146.jpg';
+import chestertonsHotelRealImg from '../assets/images/chestertons_hotel_real_1791978312478.jpg';
+import harangFestivalBoothImg from '../assets/images/harang_festival_booth_1791976208101.jpg';
 
 export const PERSONAL_INFO = {
   name: '박성현',
@@ -12,7 +19,7 @@ export const PERSONAL_INFO = {
   subIntro: '',
   email: 'shp011212@gmail.com',
   phone: '010-8746-1649',
-  portraitImage: '/profile.png',
+  portraitImage: profilePortraitImg,
   fieldImage: dalbaInternImg,
   education: {
     school: '한양대학교 경영학부 / 중국경제통상학과 복수전공',
@@ -118,7 +125,7 @@ export const CAREER_JOURNEY_STEPS: CareerStep[] = [
     thoughtSnippet: '청년들의 미충족 니즈를 파악해 펀딩 KPI를 모금액에서 참여자 수로 재정의하고, 부스 대기 이탈을 타 부스 관찰 데이터로 팀원을 설득해 단순화함',
     learningSnippet: '팀 내 의견 대립 시 주관적 직관이 아닌 현장의 객관적 관찰 데이터로 소통해야 하며, 참여 허들을 낮추는 작은 변화가 극적 성과를 만든다는 점을 배웠습니다.',
     metrics: '타 펀딩 대비 참여자 10배 (200% 달성) · 부스 방문객 150% 달성',
-    image: '/src/assets/images/harang_kakao_funding_1791978367635.jpg',
+    image: harangKakaoFundingImg,
     primaryProjectId: 'harang-crowdfunding'
   },
   {
@@ -132,7 +139,7 @@ export const CAREER_JOURNEY_STEPS: CareerStep[] = [
     thoughtSnippet: '책상 앞 가설에 머무르지 않고 실제 100명 소비자 설문과 일선 편의점 점주님들을 직접 찾아가 온·오프라인의 진짜 병목을 규명함',
     learningSnippet: '온라인 플랫폼 서비스의 성패는 결국 오프라인 현장의 운영자(점주)가 얼마나 쉽게 일할 수 있는가에 달려 있다는 현장 중심 사고를 배웠습니다.',
     metrics: 'BGF리테일 산학협력 우수상 · 설화수 우수 보고서 선정',
-    image: '/src/assets/images/strategy_analysis_deck_1791976208090.jpg',
+    image: strategyAnalysisDeckImg,
     primaryProjectId: 'bgf-retail-pocketcu'
   }
 ];
@@ -186,7 +193,7 @@ export const PROJECTS: ProjectItem[] = [
     period: '2026.01 ~ 2026.04 (3개월)',
     title: '백화점 채널 영업 지원 및 발주·프로모션 효율화',
     badge: '업무 프로세스 혁신 · AI 도입',
-    image: '/src/assets/images/dalba_retail_showcase_1791976207637.jpg',
+    image: dalbaRetailShowcaseImg,
     thoughtProcess: '백화점 행사와 팝업스토어에서 복잡한 쿠폰 방식은 매장 직원이 사용하기 번거로웠고, 본사와 매장 간 데이터 공유가 늦어져 발주 차질이 반복되었습니다. 저는 "본사가 아무리 좋은 프로모션을 기획해도, 매일 고객을 마주하는 현장 직원이 쓰기 편하지 않으면 실패한다"고 생각했습니다. 매장 직원들의 고충을 덜어주는 발주 템플릿과 생성형 AI 기반의 빠른 소재 기획 방식을 도입했습니다.',
     problem: '백화점 행사 시 현장 활용도가 떨어지는 복잡한 쿠폰 운영 방식과 매장-본사 간 소통 지연으로 인해 프로모션 효과가 제한됨.',
     insight: '매장 입지와 고객층에 따라 행동 패턴이 다르므로, 현장 직원 맞춤형의 간소화된 프로모션 스킴과 실시간 SKU 발주 체계가 필수적임을 파악.',
@@ -226,7 +233,7 @@ export const PROJECTS: ProjectItem[] = [
     period: '2025.03 ~ 2025.06 (4개월)',
     title: 'B2B 제휴 상품 기획 및 150개사 맞춤 콜드메일 영업',
     badge: '아웃바운드 영업 · ESG 마케팅',
-    image: '/src/assets/images/frip_activity_real_1791978312146.jpg',
+    image: fripActivityRealImg,
     thoughtProcess: '기존의 B2B 영업은 플랫폼 내 인기 액티비티 목록을 회사들에게 단순 복사해 보내는 식이어서 회신율이 1~2%대에 머물렀습니다. 저는 "기업 인사·복지 담당자가 우리 제휴안을 열어보아야 할 명확한 당위성(ESG 활동, 팀빌딩)"을 만들어주어야 한다고 생각했습니다. 다가오는 6월 환경의 날 시즌에 주목해, 기업이 손쉽게 도입할 수 있는 친환경 아웃도어 제휴 테마를 제안했습니다.',
     problem: '기존 제안 방식이 플랫폼 내 인기 상품을 단순 나열해 전달하는 방식에 그쳐 기업 담당자의 미팅 전환율이 매우 저조함.',
     insight: '상품의 핵심 가치는 단순 온라인 결제가 아닌 "오프라인 현장 경험"에 있음을 주목. 기업들의 친환경·ESG 사내 활동 수요와 연계할 기회 발견.',
@@ -265,7 +272,7 @@ export const PROJECTS: ProjectItem[] = [
     period: '2025.03 ~ 2025.06 (4개월)',
     title: '체스터톤스 호텔 객실 제휴 운영 & 파트너십 피보팅',
     badge: '파트너십 피보팅 · 제휴 운영',
-    image: '/src/assets/images/chestertons_hotel_real_1791978312478.jpg',
+    image: chestertonsHotelRealImg,
     thoughtProcess: '미팅 과정에서 체스터톤스 측의 예산과 운영 인력이 부족해, 당초 목표했던 단순 광고 수수료 계약이 무산될 위기에 처했습니다. 여기서 억지로 수수료를 고집하면 관계가 끝납니다. 저는 "지금은 단기 수수료를 받기보다, 유저 참여도를 극대화해 파트너사에게 우리 플랫폼의 잠재력을 확실히 증명하고 장기 파트너십으로 이어가는 것이 훨씬 이득"이라고 판단해 목표를 피보팅했습니다.',
     problem: '미팅 진행 중 파트너사의 내부 예산 및 인력이 부족함을 확인하여, 당초 기획했던 광고 수수료 확보가 어려워짐.',
     insight: '협업의 단기 목표를 "단순 광고비 수취"에서 "참여율 극대화를 통한 신뢰 확보 및 파트너십 연장"으로 기민하게 전환할 필요성 포착.',
@@ -343,7 +350,7 @@ export const PROJECTS: ProjectItem[] = [
     period: '2025.06 ~ 2026.06 (1년)',
     title: '사회혁신축제 부스 운영',
     badge: '현장 관찰 데이터 · 동선 최적화',
-    image: '/src/assets/images/harang_festival_booth_1791976208101.jpg',
+    image: harangFestivalBoothImg,
     thoughtProcess: '축제 당일 오전 방문객 수가 목표의 75% 수준에 그쳤습니다. 좁은 부스에서 2가지 게임을 동시에 진행하다 보니 대기 줄이 꼬이고 손님들이 그냥 지나쳤습니다. 팀원 간에 "홍보를 더 하자", "게임을 바꾸자"며 설전이 벌어졌을 때, 제 생각만 강요하기보다 직접 축제장을 돌며 다른 부스를 관찰했습니다. 줄이 긴 부스는 모두 30초 내에 끝나는 직관적인 상호작용형 단일 게임을 운영하고 있었습니다. 이 객관적인 관찰 데이터를 팀원들에게 보여주며 즉시 부스를 개편했습니다.',
     problem: '축제 오전 방문객이 목표의 75%에 머묾. 협소한 공간에서 2가지 복잡한 게임을 운영해 동선 혼란과 긴 대기 시간으로 이탈 발생.',
     insight: '30분간 현장을 관찰한 결과 단일 콘텐츠로의 단순화가 시급함을 발견. 팀 의견 대립 시 직관보다 "타 부스의 실제 참여 데이터"를 근거로 설득해야 함을 파악.',

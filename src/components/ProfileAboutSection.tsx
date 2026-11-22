@@ -53,11 +53,10 @@ export const ProfileAboutSection: React.FC<ProfileAboutSectionProps> = ({
             
             {/* 프로필 사진 박스 (영구 고정) */}
             <div className="w-full max-w-[270px] mx-auto lg:mx-0 rounded-2xl overflow-hidden bg-[#f4f4f6] border border-[#e6e6ec] shadow-xs">
-              <div className="aspect-[3/4] w-full relative">
+              <div className="aspect-[3/4] w-full relative overflow-hidden">
                 <img
                   src={PERSONAL_INFO.portraitImage}
                   alt="박성현 프로필"
-                  referrerPolicy="no-referrer"
                   onError={(e) => {
                     const target = e.currentTarget;
                     if (!target.dataset.triedFallback) {
@@ -65,7 +64,7 @@ export const ProfileAboutSection: React.FC<ProfileAboutSectionProps> = ({
                       target.src = '/profile.png';
                     }
                   }}
-                  className="w-full h-full object-cover object-top filter brightness-[1.01]"
+                  className="block w-full h-full object-cover object-center"
                 />
               </div>
             </div>
