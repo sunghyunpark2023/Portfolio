@@ -157,7 +157,7 @@ export const ProfileAboutSection: React.FC<ProfileAboutSectionProps> = ({
                       <div>
                         <span className="text-xs text-[#71717a] block font-medium">영어</span>
                         <div className="text-sm sm:text-base font-bold text-[#111113]">
-                          TOEIC 980점 <span className="text-xs font-normal text-[#52525b]">(만점권)</span>
+                          TOEIC 980점
                         </div>
                         <div className="text-xs sm:text-sm font-semibold text-[#3f3f46]">
                           OPIc IH
@@ -170,9 +170,6 @@ export const ProfileAboutSection: React.FC<ProfileAboutSectionProps> = ({
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="text-xs text-[#52525b] pt-2 border-t border-[#e6e6ec] font-medium">
-                    글로벌 비즈니스 실무 소통 가능
                   </div>
                 </div>
 
